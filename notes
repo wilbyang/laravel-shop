@@ -1,0 +1,5 @@
+ProductCategory::all()(['title' => '宝宝日用', "description" => "宝宝日用", "image" => ""]);
+
+
+php artisan storage:link
+rsync -avz deployer@52.221.187.6:/var/www/html/shared/storage/app/public/ /path/to/local/dir/

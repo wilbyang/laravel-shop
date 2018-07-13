@@ -23,7 +23,7 @@
     </div>
     <div class="row products-list">
       @foreach($products as $product)
-      <div class="col-xs-3 product-item">
+      <div class="col-xs-4 product-item">
         <div class="product-content">
           <div class="top">
             <div class="img">
