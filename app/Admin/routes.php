@@ -26,4 +26,11 @@ Route::group([
     $router->get('coupon_codes/{id}/edit', 'CouponCodesController@edit');
     $router->put('coupon_codes/{id}', 'CouponCodesController@update');
     $router->delete('coupon_codes/{id}', 'CouponCodesController@destroy');
+
+    $router->get('categories', 'ProductCategoryController@index');
+    $router->get('categories', 'ProductCategoryController@index');
+    $router->get('categories/{id}/edit', 'ProductCategoryController@edit');
+    $router->put('categories/{id}', 'ProductCategoryController@update');
+    $router->get('categories/create', 'ProductCategoryController@create');
+    $router->post('categories', 'ProductCategoryController@store');
 });

@@ -69,8 +69,21 @@ body {
         border: 1px solid #eee;
         .top {
           padding: 5px;
+          .img a {
+            display: block;
+            text-align: center;
+          }
           img {
-            width: 100%;
+            max-width: 100%;
+            height: 180px;
+          }
+          > a {
+            text-align: left;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp:2;
+            -webkit-box-orient: vertical;
+            height:45px;
           }
           .price {
             margin-top: 5px;

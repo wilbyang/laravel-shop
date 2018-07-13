@@ -5,7 +5,7 @@ return [
     /*
      * 站点标题
      */
-    'name' => 'Laravel Shop',
+    'name' => '北欧胜品',
 
     /*
      * 页面顶部 Logo
@@ -42,7 +42,7 @@ return [
     /*
      * 是否使用 https
      */
-    'secure' => false,
+    'secure' => true,
 
     /*
      * Laravel-Admin 用户认证设置
