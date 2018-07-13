@@ -14,6 +14,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('products.index') }}">商城</a></li>
+                <li><a href="{{ route('chatter.home') }}">讨论区</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!-- 登录注册链接开始 -->
