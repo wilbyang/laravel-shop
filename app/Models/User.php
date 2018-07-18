@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -46,5 +47,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Product::class, 'user_favorite_products')
             ->withTimestamps()
             ->orderBy('user_favorite_products.created_at', 'desc');
+    }
+    public function getReferrals()
+    {
+        return ReferralProgram::all()->map(function ($program) {
+            return ReferralLink::getReferral($this, $program);
+        });
     }
 }

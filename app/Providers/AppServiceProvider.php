@@ -5,6 +5,7 @@ namespace App\Providers;
 use Monolog\Logger;
 use Yansongda\Pay\Pay;
 use Illuminate\Support\ServiceProvider;
+use Hashids\Hashids;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -52,5 +53,11 @@ class AppServiceProvider extends ServiceProvider
             // 调用 Yansongda\Pay 来创建一个微信支付对象
             return Pay::wechat($config);
         });
+
+        $this->app->singleton('hashids', function () {
+            $hashids = new Hashids();
+            return $hashids;
+        });
+
     }
 }

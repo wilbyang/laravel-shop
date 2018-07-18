@@ -30,6 +30,9 @@ class EventServiceProvider extends ServiceProvider
         OrderReviewd::class => [
             UpdateProductRating::class,
         ],
+        'App\Events\UserReferred' => [
+            'App\Listeners\RewardUser',
+        ],
     ];
 
     /**
