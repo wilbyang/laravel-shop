@@ -40,7 +40,9 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:60,1',
+            'cors',
             'bindings',
+            
         ],
     ];
 
@@ -59,5 +61,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'email_verified' => \App\Http\Middleware\CheckIfEmailVerified::class,
+        'cors' => \App\Http\Middleware\Cors::class,
     ];
 }

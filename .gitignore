@@ -11,3 +11,7 @@ npm-debug.log
 yarn-error.log
 .env
 deploy.php
+public/bower_components
+public/data
+public/images
+public/src

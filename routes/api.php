@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\ProductResource;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 /*
@@ -14,5 +16,12 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    $products = Product::where('user_id', '=', $request->user()->id)->get();
+    return ProductResource::collection($products);
 });
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('products', 'ProductsController@index')->name('api.products.get');
+    Route::get('categories', 'ProductsController@categories')->name('api.categories.get');
+    Route::options('categories', 'ProductsController@categories')->name('api.categories.options');
+});
+
