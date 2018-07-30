@@ -33,4 +33,9 @@ Route::group([
     $router->put('categories/{id}', 'ProductCategoryController@update');
     $router->get('categories/create', 'ProductCategoryController@create');
     $router->post('categories', 'ProductCategoryController@store');
+
+    $router->get('posts', 'PostController@index');
+    $router->get('chatter_categories', 'ChatterCategoryController@index');
+    $router->get('chatter_categories/{id}/edit', 'ChatterCategoryController@edit');
+    $router->post('chatter_categories', 'ChatterCategoryController@store');
 });

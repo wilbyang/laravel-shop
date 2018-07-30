@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Models\Product;
 
+use App\Models\ProductCategory;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -92,10 +93,12 @@ class ProductsController extends Controller
      */
     protected function form()
     {
+        $categories = ProductCategory::all()->pluck('title', 'id');
         // 创建一个表单
-        return Admin::form(Product::class, function (Form $form) {
+        return Admin::form(Product::class, function (Form $form) use ($categories) {
             // 创建一个输入框，第一个参数 title 是模型的字段名，第二个参数是该字段描述
             $form->text('title', '商品名称')->rules('required');
+            $form->select("category_id", "商品类别")->options($categories);
             // 创建一个选择图片的框
             $form->image('image', '封面图片')->rules('required|image');
             // 创建一个富文本编辑器

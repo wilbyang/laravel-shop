@@ -32,7 +32,5 @@ class ProductCategory extends Model
             return $this->all();
         });*/
     }
-    public function user() {
-        return $this->belongsTo(User::class);
-    }
+
 }
